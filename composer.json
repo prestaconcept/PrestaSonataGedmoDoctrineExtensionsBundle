@@ -15,8 +15,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.2",
-        "sonata-project/admin-bundle":"2.2.*",
-        "presta/sonata-navigation-bundle": "1.0.*",
+        "presta/sonata-admin-extended-bundle":"1.0.*",
         "stof/doctrine-extensions-bundle": "1.1.*"
     },
     "suggest": {
