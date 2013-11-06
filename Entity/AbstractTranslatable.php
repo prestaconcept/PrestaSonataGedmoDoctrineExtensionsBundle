@@ -59,7 +59,7 @@ abstract class AbstractTranslatable
     /**
      * {@inheritdoc}
      */
-    public function addTranslation($translation)
+    public function addTranslation(AbstractTranslation $translation)
     {
         if (!$this->translations->contains($translation)) {
             $translation->setObject($this);

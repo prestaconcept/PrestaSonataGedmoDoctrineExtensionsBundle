@@ -24,7 +24,7 @@ interface TranslatableInterface
     /**
      * @param AbstractTranslation $translation
      */
-    public function addTranslation($translation);
+    public function addTranslation(AbstractTranslation $translation);
 
     /**
      * @return ArrayCollection
