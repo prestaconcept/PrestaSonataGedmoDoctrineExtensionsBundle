@@ -1,0 +1,17 @@
+
+{% if admin.isTranslatable(object) is defined and admin.isTranslatable(object) %}
+    <div class="locale_switcher">
+        {% spaceless %}
+            {% for locale in admin.locales %}
+                {% if (object.id) %}
+                    {% set adminRoute      = 'edit' %}
+                {% else %}
+                    {% set adminRoute      = 'create' %}
+                {% endif %}
+                <a href="{{ admin.generateUrl(adminRoute, {'id': admin.id(object), 'tl': locale}) }}" accesskey="" class=" {% if (admin.getTranslatableLocale == locale) %} locale_active {% endif %}" title="{{ 'admin.locale_switcher.tooltip.' ~ locale|trans }}">
+                    <img src="{{ asset('bundles/prestasonataadmin/img/flags/' ~ locale ~ '.png')}}" />
+                </a>
+            {% endfor %}
+        {% endspaceless %}
+    </div>
+{% endif %}
