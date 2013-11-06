@@ -39,10 +39,7 @@ abstract class AbstractTranslatable
     }
 
     /**
-     * Set locale for Gedmo translation behavior
-     *
-     * @param  string $locale
-     * @return AbstractTranslatable
+     * {@inheritdoc}
      */
     public function setLocale($locale)
     {
@@ -52,7 +49,7 @@ abstract class AbstractTranslatable
     }
 
     /**
-     * @return string
+     * {@inheritdoc}
      */
     public function getLocale()
     {
@@ -60,8 +57,7 @@ abstract class AbstractTranslatable
     }
 
     /**
-     * @param  AbstractPersonalTranslation $translation
-     * @return AbstractTranslatable
+     * {@inheritdoc}
      */
     public function addTranslation($translation)
     {
@@ -74,7 +70,7 @@ abstract class AbstractTranslatable
     }
 
     /**
-     * @return ArrayCollection
+     * {@inheritdoc}
      */
     public function getTranslations()
     {
@@ -82,11 +78,7 @@ abstract class AbstractTranslatable
     }
 
     /**
-     * Retourne la traduction d'un champ pour une locale
-     *
-     * @param  $field
-     * @param  $locale
-     * @return string
+     * {@inheritdoc}
      */
     public function getTranslation($field, $locale)
     {
@@ -98,5 +90,4 @@ abstract class AbstractTranslatable
 
         return null;
     }
-
 }

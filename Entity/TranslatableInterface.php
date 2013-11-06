@@ -9,8 +9,34 @@
  */
 namespace Presta\SonataGedmoDoctrineExtensionsBundle\Entity;
 
-
 interface TranslatableInterface
 {
+    /**
+     * @param string $locale
+     */
+    public function setLocale($locale);
 
+    /**
+     * @return string
+     */
+    public function getLocale();
+
+    /**
+     * @param AbstractTranslation $translation
+     */
+    public function addTranslation($translation);
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getTranslations();
+
+    /**
+     * Return field translation for a given locale
+     *
+     * @param  string $field
+     * @param  string $locale
+     * @return string
+     */
+    public function getTranslation($field, $locale);
 }
