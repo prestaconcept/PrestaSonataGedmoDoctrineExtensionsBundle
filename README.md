@@ -1,5 +1,13 @@
-PrestaSonataGedmoDoctrineExtensions
-===================================
+##PrestaSonataGedmoDoctrineExtensionsBundle
+
+
+[![Build Status](https://secure.travis-ci.org/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle.png?branch=master)](http://travis-ci.org/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle/badges/quality-score.png?s=682cd4431fb27a42865e28376e276b51d66e48cc)](https://scrutinizer-ci.com/g/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle/)
+[![Latest Stable Version](https://poser.pugx.org/presta/sonata-gedmo-doctrine-extensions-bundle/v/stable.png)](https://packagist.org/packages/presta/sonata-gedmo-doctrine-extensions-bundle)
+[![Total Downloads](https://poser.pugx.org/presta/sonata-gedmo-doctrine-extensions-bundle/downloads.png)](https://packagist.org/packages/presta/sonata-gedmo-doctrine-extensions-bundle)
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/8136ca7e-8bfc-415e-b82d-f7cfe49b2b47/big.png)](https://insight.sensiolabs.com/projects/8136ca7e-8bfc-415e-b82d-f7cfe49b2b47)
+[![knpbundles.com](http://knpbundles.com/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle/badge)](http://knpbundles.com/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle)
 
 
 #Overview #
@@ -12,8 +20,7 @@ This bundle integrates [Gedmo Doctrine Extensions][1] for Sonata Admin.
 #Features #
 
 - locale switcher based on configuration
-- dashboard layouts
-- PrestaSonataNavigation integration
+- ...
 
 ## Documentation ##
 
@@ -39,7 +46,7 @@ Pull requests are welcome.
 
 
 Thanks to
-[everyone who has contributed](https://github.com/prestaconcept/PrestaSonataGedmoDoctrineExtensions/graphs/contributors) already.
+[everyone who has contributed](https://github.com/prestaconcept/PrestaSonataGedmoDoctrineExtensionsBundle/graphs/contributors) already.
 
 ---
 
