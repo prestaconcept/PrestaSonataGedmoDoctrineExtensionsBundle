@@ -11,6 +11,7 @@ namespace Presta\SonataGedmoDoctrineExtensionsBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Gedmo\Translatable\TranslatableListener;
+use Sonata\AdminBundle\Datagrid\ListMapper;
 
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
@@ -172,5 +173,39 @@ class AbstractTranslatableAdmin extends Admin
             $em->persist($object);
             $em->flush();
         }
+    }
+
+    /**
+     * Add a translated field in the listing
+     *
+     * @param  ListMapper $listMapper
+     * @param  string     $fieldName
+     * @return ListMapper
+     */
+    protected function addTranslatedField(ListMapper $listMapper, $fieldName)
+    {
+        //On supprimer les autres champs
+        foreach ($this->listFieldDescriptions as $fieldDescription) {
+            if (strcmp($fieldDescription->getName(), '_action') === 0) {
+                continue;
+            }
+            $listMapper->remove($fieldDescription->getName());
+        }
+
+        //On ajoute un identifier sur la langue par défaut
+        $listMapper->addIdentifier($fieldName);
+
+        //On ajoute les autres langues
+        foreach ($this->getLocales() as $locale) {
+            if (strcmp($locale, $this->getDefaultLocale()) === 0 ) {
+                continue;
+            }
+            $fieldDescription = new TranslatedFieldDescription();
+            $fieldDescription->setName($fieldName.'#'.$locale);
+            $fieldDescription->setOptions(array('label' => 'list.label_translation_' . $locale));
+            $listMapper->add($fieldDescription);
+        }
+
+        return $listMapper;
     }
 }
