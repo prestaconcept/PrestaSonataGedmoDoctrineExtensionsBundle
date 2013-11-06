@@ -23,11 +23,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('presta_sonata_gedmo_doctrine_extensions');
-
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $treeBuilder->root('presta_sonata_gedmo_doctrine_extensions');
 
         return $treeBuilder;
     }
