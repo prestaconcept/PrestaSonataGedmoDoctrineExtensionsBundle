@@ -8,8 +8,10 @@
                 {% else %}
                     {% set adminRoute      = 'create' %}
                 {% endif %}
-                <a href="{{ admin.generateUrl(adminRoute, {'id': admin.id(object), 'tl': locale}) }}" accesskey="" class=" {% if (admin.getTranslatableLocale == locale) %} locale_active {% endif %}" title="{{ 'admin.locale_switcher.tooltip.' ~ locale|trans }}">
-                    <img src="{{ asset('bundles/prestasonataadmin/img/flags/' ~ locale ~ '.png')}}" />
+                <a href="{{ admin.generateUrl(adminRoute, {'id': admin.id(object), 'tl': locale}) }}" accesskey=""
+                   class=" {% if (admin.getTranslatableLocale == locale) %} active {% endif %}"
+                   title="{{ 'admin.locale_switcher.tooltip' |trans }}">
+                    <img src="{{ asset('bundles/prestasonataadminextended/img/flags/' ~ locale ~ '.png')}}" />
                 </a>
             {% endfor %}
         {% endspaceless %}
