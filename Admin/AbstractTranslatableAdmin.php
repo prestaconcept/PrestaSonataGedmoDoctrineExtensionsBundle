@@ -9,6 +9,7 @@
  */
 namespace Presta\SonataGedmoDoctrineExtensionsBundle\Admin;
 
+use Presta\SonataAdminExtendedBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Admin\Admin;
 use Gedmo\Translatable\TranslatableListener;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -16,7 +17,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
  */
-class AbstractTranslatableAdmin extends Admin
+class AbstractTranslatableAdmin extends AbstractAdmin
 {
     /**
      * Request parameter
