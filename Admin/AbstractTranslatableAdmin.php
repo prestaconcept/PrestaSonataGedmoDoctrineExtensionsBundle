@@ -198,7 +198,7 @@ class AbstractTranslatableAdmin extends AbstractAdmin
 
         //On ajoute les autres langues
         foreach ($this->getLocales() as $locale) {
-            if (strcmp($locale, $this->getDefaultLocale()) === 0 ) {
+            if (strcmp($locale, $this->getDefaultLocale()) === 0) {
                 continue;
             }
             $fieldDescription = new TranslatedFieldDescription();
