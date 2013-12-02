@@ -11,6 +11,8 @@ namespace Presta\SonataGedmoDoctrineExtensionsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Symfony\Component\Config\FileLocator;
 
 /**
  * @author Nicolas Bastien <nbastien@prestaconcept.net>
@@ -24,5 +26,8 @@ class PrestaSonataGedmoDoctrineExtensionsExtension extends Extension
     {
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);
+
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('admin.xml');
     }
 }

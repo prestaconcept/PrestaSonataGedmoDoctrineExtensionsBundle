@@ -1,19 +1,22 @@
-
-{% if admin.isTranslatable(object) is defined and admin.isTranslatable(object) %}
-    <div class="locale_switcher">
-        {% spaceless %}
-            {% for locale in admin.locales %}
-                {% if (object.id) %}
-                    {% set adminRoute      = 'edit' %}
-                {% else %}
-                    {% set adminRoute      = 'create' %}
-                {% endif %}
-                <a href="{{ admin.generateUrl(adminRoute, {'id': admin.id(object), 'tl': locale}) }}" accesskey=""
-                   class=" {% if (admin.getTranslatableLocale == locale) %} active {% endif %}"
-                   title="{{ 'admin.locale_switcher.tooltip' |trans }}">
-                    <img src="{{ asset('bundles/prestasonataadminextended/img/flags/' ~ locale ~ '.png')}}" />
-                </a>
-            {% endfor %}
-        {% endspaceless %}
-    </div>
-{% endif %}
+{% block object_locale_switcher %}
+    {% if (object.locale is defined) %}
+        <div class="locale_switcher">
+            {% spaceless %}
+                {% for locale in locales %}
+                    {% if (locale_switcher_route is not defined) %}
+                        {% if (object.id) %}
+                            {% set locale_switcher_route = 'edit' %}
+                        {% else %}
+                            {% set locale_switcher_route = 'create' %}
+                        {% endif %}
+                    {% endif %}
+                    <a href="{{ admin.generateUrl(locale_switcher_route, {'id': admin.id(object), 'tl': locale}) }}" accesskey=""
+                       class=" {% if (object.locale == locale) %} active {% endif %}"
+                       title="{{ 'admin.locale_switcher.tooltip' |trans([], 'PrestaSonataAdminExtendedBundle') }}">
+                        <img src="{{ asset('bundles/prestasonataadminextended/img/flags/' ~ locale ~ '.png')}}" />
+                    </a>
+                {% endfor %}
+            {% endspaceless %}
+        </div>
+    {% endif %}
+{% endblock %}
