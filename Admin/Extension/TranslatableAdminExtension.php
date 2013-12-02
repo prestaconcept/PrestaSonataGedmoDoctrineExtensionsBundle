@@ -53,7 +53,9 @@ class TranslatableAdminExtension extends AbstractTranslatableAdminExtension
     protected function getTranslatableListener(AdminInterface $admin)
     {
         if ($this->translatableListener == null) {
-            $this->translatableListener = $this->getContainer($admin)->get('stof_doctrine_extensions.listener.translatable');
+            $this->translatableListener = $this->getContainer($admin)->get(
+                'stof_doctrine_extensions.listener.translatable'
+            );
         }
 
         return $this->translatableListener;
@@ -72,4 +74,4 @@ class TranslatableAdminExtension extends AbstractTranslatableAdminExtension
             $object->setLocale($this->getTranslatableLocale($admin));
         }
     }
-} 
+}
