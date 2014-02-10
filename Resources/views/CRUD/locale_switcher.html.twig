@@ -2,20 +2,22 @@
     {% if (object.locale is defined) %}
         <div class="locale_switcher">
             {% spaceless %}
-                {% for locale in locales %}
-                    {% if (locale_switcher_route is not defined) %}
-                        {% if (object.id) %}
-                            {% set locale_switcher_route = 'edit' %}
-                        {% else %}
-                            {% set locale_switcher_route = 'create' %}
+                {% if (presta_sonata_admin_extended_locales|length > 1) %}
+                    {% for locale in presta_sonata_admin_extended_locales %}
+                        {% if (locale_switcher_route is not defined) %}
+                            {% if (object.id) %}
+                                {% set locale_switcher_route = 'edit' %}
+                            {% else %}
+                                {% set locale_switcher_route = 'create' %}
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                    <a href="{{ admin.generateUrl(locale_switcher_route, {'id': admin.id(object), 'tl': locale}) }}" accesskey=""
-                       class=" {% if (object.locale == locale) %} active {% endif %}"
-                       title="{{ 'admin.locale_switcher.tooltip' |trans([], 'PrestaSonataAdminExtendedBundle') }}">
-                        <img src="{{ asset('bundles/prestasonataadminextended/img/flags/' ~ locale ~ '.png')}}" />
-                    </a>
-                {% endfor %}
+                        <a href="{{ admin.generateUrl(locale_switcher_route, {'id': admin.id(object), 'tl': locale}) }}" accesskey=""
+                           class=" {% if (object.locale == locale) %} active {% endif %}"
+                           title="{{ 'admin.locale_switcher.tooltip' |trans([], 'PrestaSonataAdminExtendedBundle') }}">
+                            <img src="{{ asset('bundles/prestasonataadminextended/img/flags/' ~ locale ~ '.png')}}" />
+                        </a>
+                    {% endfor %}
+                {% endif %}
             {% endspaceless %}
         </div>
     {% endif %}
