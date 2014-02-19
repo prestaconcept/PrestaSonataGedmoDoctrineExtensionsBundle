@@ -9,7 +9,6 @@
     </parameters>
 
     <services>
-
         <service id="presta_sonata_gedmo.block.locale_switcher" class="%presta_sonata_gedmo.block.locale_switcher.class%">
             <tag name="sonata.block" />
             <argument>presta_sonata_gedmo.block.locale_switcher</argument>
