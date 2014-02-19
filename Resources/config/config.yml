@@ -1,0 +1,4 @@
+
+sonata_block:
+    blocks:
+        presta_sonata_gedmo.block.locale_switcher:
