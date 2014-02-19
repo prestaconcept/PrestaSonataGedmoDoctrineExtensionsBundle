@@ -23,7 +23,7 @@ class LocaleSwitcherBlockService extends BaseBlockService
     /**
      * {@inheritdoc}
      */
-    function setDefaultSettings(OptionsResolverInterface $resolver)
+    public function setDefaultSettings(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(
             array(
