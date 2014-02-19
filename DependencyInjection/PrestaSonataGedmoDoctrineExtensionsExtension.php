@@ -29,5 +29,7 @@ class PrestaSonataGedmoDoctrineExtensionsExtension extends Extension
 
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('admin.xml');
+        $loader->load('listener.xml');
+        $loader->load('block.xml');
     }
 }
