@@ -83,4 +83,14 @@ abstract class AbstractTranslatableAdminExtension extends AdminExtension
     {
         return array(self::TRANSLATABLE_LOCALE_PARAMETER => $this->getTranslatableLocale($admin));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function alterNewInstance(AdminInterface $admin, $object)
+    {
+        if ($object->getLocale() === null) {
+            $object->setLocale($this->getTranslatableLocale($admin));
+        }
+    }
 }

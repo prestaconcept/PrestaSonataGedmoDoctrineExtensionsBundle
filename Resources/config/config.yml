@@ -2,3 +2,7 @@
 sonata_block:
     blocks:
         presta_sonata_gedmo.block.locale_switcher:
+
+parameters:
+    locales: []
+    default_locale: %locale% #allow you to define a default locale if parameter is not set
