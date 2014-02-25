@@ -14,7 +14,7 @@
 
 This bundle integrates [Gedmo Doctrine Extensions][1] for Sonata Admin.
 
-![PrestaSonataGedmoDoctrineExtensionsBundle-Translation](http://prestaconcept.github.io/assets/assets/presta-gedmo-doctrine-extensions/presta-gedmo-doctrine-extensions-translation.jpg)
+![PrestaSonataGedmoDoctrineExtensionsBundle-Translation](http://prestaconcept.github.io/assets/presta-gedmo-doctrine-extensions/presta-gedmo-doctrine-extensions-translation.jpg)
 
 :pencil2: If you use it with [PrestaSonataAdminExtendedBundle][7] locale switcher block will be rendered with flags...
 
