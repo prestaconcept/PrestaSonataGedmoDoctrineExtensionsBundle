@@ -11,7 +11,6 @@ namespace Presta\SonataGedmoDoctrineExtensionsBundle\Admin\Extension;
 
 use Sonata\AdminBundle\Admin\AdminExtension;
 use Sonata\AdminBundle\Admin\AdminInterface;
-use Sonata\AdminBundle\Form\FormMapper;
 
 /**
  * Add locale switcher for your models
