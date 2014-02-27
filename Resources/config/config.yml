@@ -6,3 +6,9 @@ sonata_block:
 parameters:
     locales: []
     default_locale: %locale% #allow you to define a default locale if parameter is not set
+
+sonata_admin:
+    extensions:
+        presta_sonata_gedmo.admin.extension.translatable:
+            implements:
+                - Presta\SonataGedmoDoctrineExtensionsBundle\Entity\TranslatableInterface
